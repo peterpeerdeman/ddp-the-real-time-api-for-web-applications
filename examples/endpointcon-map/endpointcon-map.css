@@ -1,0 +1,31 @@
+h1 {
+    position: absolute;
+    font-family: sans-serif;
+    top: 10px;
+    left: 150px;
+    font-weight: 600;
+}
+
+
+.endpointconmap {
+	display:block;
+	width:891px;
+	background: url(map.png);
+	height:937px;
+}
+
+.avatar {
+	position:absolute;
+	cursor:move;
+	width:50px;
+	height:50px;
+	box-shadow: 0px 5px 20px #aaa;
+    border: 5px solid #fff;
+    -webkit-transition: all .5s; /* Safari */
+    transition: all .5s;
+}
+
+.avatar.ui-draggable-dragging {
+    -webkit-transition: none; /* Safari */
+    transition: none;
+}

@@ -1,0 +1,15 @@
+{
+  "name": "endpointcon-server",
+  "version": "1.0.0",
+  "description": "an example ddp server in vanilla javascript",
+  "main": "endpointcon-server.js",
+  "dependencies": {
+    "ddp-server-reactive": "^0.2.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}

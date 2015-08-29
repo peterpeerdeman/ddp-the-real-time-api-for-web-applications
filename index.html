@@ -38,8 +38,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section class="pp-title">
-					<h1>DDP</h1>
-					<h3>the real-time API for web applications</h3>
+					<h2>DDP: the real-time API for web applications</h2>
                     <p>
                     	<img src="images/peter2.png" alt="">
                     </p>
@@ -49,510 +48,211 @@
                     </p>
 				</section>
 				<section data-background="images/payoff-slide.png">
+                </section>
+				<section>
+                	<ul>
+                        <li>DDP?</li>
+                    	<div class="fragment">
+		                    <li>Meteor?</li>
+                    	</div>
+                    	<div class="fragment">
+		                    <li>Websockets?</li>
+                    	</div>
+                    </ul>
 				</section>
                 <section>
-                    <h3><a href="endpoint15.meteor.com">endpoint15.meteor.com</a></h3>
+                    <h2>overview</h2>
+                    <!--
+                	<ul>
+                        <li>definition</li>
+                        <li>demo application</li>
+                        <li>spec</li>
+                        <li>meteor app code</li>
+                        <li>vanilla app code</li>
+                        <li>next steps</li>
+                    </ul>
+                    -->
+                </section>
+				<section>
+                    <h3>Distributed Data Protocol</h3>
+                    <h4>(as spec)</h4>
+                    <blockquote>"a protocol between client and server that supports RPC, the client subscribing to documents and the server sending changes about those documents"</blockquote>
+                    <!--<blockquote>"a <u>simple</u> and <u>standard</u> way for servers to <u>publish</u> documents to clients and keep the documents updated when <u>changes</u> are made"</blockquote>-->
+				</section>
+				<section>
+                    <h3>Distributed Data Protocol</h3>
+                    <h4>(as matt)</h4>
+					<blockquote>"a chance to define interoperability in realtime websockets, as http did for request response"</blockquote>
+				</section>
+				<section>
+                	<h2>Distributed Data Protocol</h2>
+                	<ul>
+	                    	<li>Coined March 21, 2012 by Matt Debergalis</li>
+                    	<div class="fragment">
+		                    <li>Pub Sub and Remote Procedure Calls</li>
+                    	</div>
+                    	<div class="fragment">
+		                    <li>No REST / Request-Response</li>
+                    	</div>
+                    	<div class="fragment">
+		                    <li>Data on the wire</li>
+                    	</div>
+                    </ul>
+				</section>
+                <section>
+                    <h3><a href="http://endpoint15.meteor.com">endpoint15.meteor.com</a></h3>
                     <iframe style="height:640px" src="http://endpoint15.meteor.com" height="100%" width="100%"></iframe>
+                    <!--
+                    - show realtime application
+                    - show no REST calls
+                    - show websocket
+                    - show ddp messages
+                        - connect
+                        - subscribe
+                        - added
+                        - changed
+                    -->
                 </section>
+
 				<section>
-                    <img src="images/partup-logo.png" alt=""/>
-					<blockquote>"a smart marketplace for teamwork, matching people into temporary teams"</blockquote>
-				</section>
-				<section>
-                    <h1><a href="http://localhost:3000">Demo</a></h1>
-				</section>
-				<section>
-                	<h2>Premises</h2>
+                	<h2>DDP spec</h2>
                 	<ul>
                     	<div class="fragment">
-	                    	<li>Super quick launch (4 months)</li>
+	                    	<li>Connection</li>
                     	</div>
                     	<div class="fragment">
-		                    <li>Realtime collaboration emphasis</li>
+		                    <li>Managing Data</li>
                     	</div>
                         <div class="fragment">
-                            <li>Easy onboarding for developers</li>
+                            <li>Remote Procedure Calls</li>
+                        </div>
+                        <div class="fragment">
+                            <li>Errors</li>
                         </div>
                     </ul>
 				</section>
 				<section>
-                	<h2>Choosing Meteor</h2>
-                	<h3>the good</h2>
-                	<ul>
-                    	<div class="fragment">
-	                    	<li>Reactive data model</li>
-                    	</div>
-                    	<div class="fragment">
-		                    <li>"All inclusive" development environment</li>
-                    	</div>
-                        <div class="fragment">
-                            <li>Loads of (modern) packages</li>
-                        </div>
-                    </ul>
-				</section>
-				<section>
-                    <h2>Choosing Meteor</h2>
-                    <h3>the scary</h3>
-                	<ul>
-                    	<div class="fragment">
-	                    	<li>Framework maturity</li>
-                    	</div>
-                    	<div class="fragment">
-		                    <li>Risk tolerance</li>
-                    	</div>
-                        <div class="fragment">
-                            <li>DDP</li>
-                        </div>
-                    </ul>
-				</section>
-				<section>
-					<h2>Challenges</h2>
-				</section>
-			
-				<section>
-                    <h2>Challenge 1</h2>
-                    <h3>Teamwork</h3>
-                </section>
-				<section>
-                    <h2>Tutorial says:</h2>
-                    <blockquote>
-                       "put everything in one file!"
-                    </blockquote>
-                </section>
-				<section>
-                    <h2>Project structure</h2>
+                    <h2>DDP spec</h2>
+                    <h3>Connection</h3>
+                    <!-- 
+                        - explain JSON over SockJS or Websockets 
+                    -->
                 	<pre>
-                		<code data-trim>
-.. (up a dir)
-/Users/peter/development/partup/
-▾ app/
-  ▸ client/
-  ▸ i18n/
-  ▸ lib/
-  ▾ packages/
-    ▸ cfs:file/
-    ▸ partup:client-activity/
-    ▸ partup:client-base/
-    ▸ partup:client-columns-layout/
-    ▸ partup:client-commentfield/
-    ▸ partup:client-contribution/
-    ▸ partup:client-copy-to-clipboard/
-    ▸ partup:client-dropdowns/
-    ▸ partup:client-focuspoint/
-    ▸ partup:client-forgotpassword/
-    ▸ partup:client-gallery/
-    ▸ partup:client-invite-to-partup/
-    ▸ partup:client-loader/
-    ▸ partup:client-location-autocomplete/
-    ▸ partup:client-login/
-    ▸ partup:client-network-settings/
-    ▸ partup:client-pages/
-    ▸ partup:client-partup-tile/
-    ▸ partup:client-partupsettings/
-    ▸ partup:client-popup/
-    ▸ partup:client-rating/
-    ▸ partup:client-ratings/
-    ▸ partup:client-resetpassword/
-    ▸ partup:client-spinner/
-    ▸ partup:client-update/
-    ▸ partup:client-usercard/
-    ▸ partup:client-widget-spinner/
-    ▸ partup:lib/
-    ▸ partup:meteor-bender/
-    ▸ partup:newrelic/
-    ▸ partup:server-base/
-    ▸ partup:server/
-  ▸ private/
-  ▸ public/
-  ▸ server/
-  ▸ tests/
-  ▸ uploads/
-    package.json
-    scss.json
-▸ backups/
-▸ bin/
-▸ config/
-▸ devops/
-▸ docs/
-  CHANGELOG.md
-  ERROR.md
-  methods_documentation*
-  README.md
-    					</code>
-    				</pre>
+                		<code>
+                       CLIENT          SERVER
+
+                    => connect
+                                    <= connected
+                                    <= failed
+                                                        
+                    => ping
+                                    <= pong
+                        </code>
+                    </pre>
+                    <!-- 
+                        - setup demo
+                            - ddp-analyzer-proxy
+                            - cd ~/development/meteor/endpointcon-map
+                            - DDP_DEFAULT_CONNECTION_URL=http://localhost:3030 meteor
+                            - localhost:3000
+                        - show ddp-analyzer-proxy output
+                    -->
+				</section>
+				<section>
+                    <h2>DDP spec</h2>
+                    <h3>Managing Data</h3>
+                	<pre>
+                		<code>
+                       CLIENT          SERVER
+
+                    => sub
+                                    <= added
+                                    <= added
+                                    <= ready
+                                    <= changed
+                                    <= removed
+                    => unsub
+                        </code>
+                    </pre>
+                    <!-- 
+                        - show ddp-analyzer-proxy output
+                    -->
+				</section>
+				<section>
+                    <h2>DDP spec</h2>
+                    <h3>Remote Procedure Calls</h3>
+                	<pre>
+                		<code>
+                       CLIENT          SERVER
+
+                    => method
+                                    <= result
+                                    <= changed
+                                    <= updated
+                    => unsub
+                        </code>
+                    </pre>
+                    <!-- 
+                        - show ddp-analyzer-proxy 
+                    -->
+				</section>
+				<section>
+                    <h2>DDP spec</h2>
+                    <h3>errors</h3>
+                	<pre>
+                		<code>
+                        {
+                            "msg": "result",
+                            "id": "1",
+                            "error": {
+                                "error": 404,
+                                "reason": "Method not found",
+                                "message": "Method not found [404]",
+                                "errorType": "Method.Error"
+                            }
+                        }
+                        </code>
+                    </pre>
 				</section>
                 <section>
-                    <h2>Component directory structure</h2>
-                    <pre>
-                        <code>
-  ▾ partup:client-activity/
-    ▾ i18n/
-        en.i18n.json
-        nl.i18n.json
-    ▾ templates/
-        ActivityForm.html
-        ActivityForm.js
-        ActivityFormPlaceholders.js
-        ActivityView.html
-        ActivityView.js
-      Activity.html
-      Activity.js
-      package-tap.i18n
-      package.js
-                        </code>
-                    </pre>
+                    <h2>Code Examples</h2>
+                    <p><img width=300 src="images/endpointcon-map.png"/></p>
+                    <p><a href="https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications/tree/master/examples/endpointcon-map">endpointcon-map meteor example on github</a></p>
                 </section>
                 <section>
-                    <h2>Activity.html</h2>
-                    <pre>
-                        <code class="html">
-<template name="Activity">
-    {{# if showForm }}
-
-        {{> ActivityForm
-            activity=activity
-            edit=edit
-            CREATE=CREATE
-            POPUP=POPUP
-            CREATE_PARTUP=CREATE_PARTUP
-            createCallback=createCallback
-        }}
-
-    {{ else }}
-
-        {{> ActivityView
-            activity=activity
-            contribution_id=contribution_id
-            edit=edit
-            COMMENTS_LINK=COMMENTS_LINK
-            CONTRIBUTIONS=CONTRIBUTIONS
-            EXPANDED=EXPANDED
-            READONLY=READONLY
-            CREATE_PARTUP=CREATE_PARTUP
-            UPDATE_LINK=UPDATE_LINK
-            isUpper=isUpper
-        }}
-
-    {{/ if }}
-</template>
-                        </code>
-                    </pre>
-                </section>
-                <section>
-                    <h2>Activity.js</h2>
-                    <pre>
-                        <code class="javascript">
-/**
- * Widget to render a single activity
- *
- * You can pass the widget a few options which enable various functionalities
- *
- * @param {Object} activity          The activity to render
- * @param {Function} createCallback  A function which is executed after a new activity has been added
- * @param {String} contribution_id   Contribution id to render, if only one should be rendered
- * @param {Boolean} COMMENTS_LINK    Whether the widget should display the link to comments
- * ...
- */
-
-// snip
-
-/*************************************************************/
-/* Widget helpers */
-/*************************************************************/
-Template.Activity.helpers({
-    showForm: function() {
-        return !this.READONLY && (!!this.CREATE || Template.instance().edit.get());
-    }
-});
-
-// snip
-                        </code>
-                    </pre>
-                </section>
-                <section>
-                    <h2>component usage</h2>
-                    <pre>
-                        <code class="html">
-
-<template name="app_partup_activities">
-    <div class="pu-page">
-        <div class="pu-composition pu-composition-partupdetailactivities">
-
-            {{# each activities }}
-                {{> Activity activity=. CONTRIBUTIONS=true COMMENTS_LINK=true }}
-            {{/ each }}
-
-            <!-- ... -->
-
-            {{# each archivedActivities }}
-                {{> Activity activity=. CONTRIBUTIONS=true }}
-            {{/ each }}
-         </div>
-     </div>
-</template>
-                        </code>
-                    </pre>
+                    <h2>Code Examples</h2>
+                    <p><img width=500 src="images/endpointcon-server-and-client.png"/></p>
+                    <p><a href="https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications/tree/master/examples/endpointcon-server">endpointcon-server node example on github</a></p>
+                    <p><a href="https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications/tree/master/examples/endpointcon-client">endpointcon-client javascript example on github</a></p>
                 </section>
                 
 				<section>
-                    <h2>Challenge 2</h2>
-                    <h3>Code Reuse</h3>
-                </section>
-				<section>
-                    <h3>Lib package</h3>
-                    <pre>
-                    	<code>
-   ▾ partup:lib/
-     ▸ collections/
-     ▸ helpers/
-     ▸ private/
-     ▸ schemas/
-     ▸ services/
-     ▸ startup/
-     ▸ transformers/
-       error.js
-       namespace.js
-       package.js
-                        </code>
-    				</pre>
-				</section>
-				<section>
-                    <h3>namespace.js</h3>
-                    <pre>
-                    	<code class="javascript">
-/**
- @namespace Partup
- @name partup
- */
-Partup = {};
-
-/**
- @namespace Helpers
- @name partup.helpers
- */
-Partup.helpers = {};
-
-/**
- @namespace Schemas
- @name partup.schemas
- */
-Partup.schemas = {
-    /**
-     @namespace schema.forms namespace
-     @name partup.schemas.forms
-     */
-    forms: {},
-    /**
-     @namespace schema.entities namespace
-     @name partup.schemas.entities
-     */
-    entities: {}
-};
-
-// snip
-                        </code>
-    				</pre>
-				</section>
-				<section>
-                    <h3>tags.js</h3>
-                    <pre>
-                    	<code class="javascript">
-/**
- @namespace Tags helper service
- @name Partup.services.tags
- @memberOf partup.services
- */
-Partup.services.tags = {
-    /**
-     * Transform a comma separated string into an array of tags
-     *
-     * @memberOf services.tags
-     * @param {String} tags_input
-     */
-    tagInputToArray: function(tags_input) {
-        if (!tags_input) return [];
-
-        var _tags = tags_input.split(',');
-
-        if (_tags.length === 0) return [];
-
-        return _tags.map(function(elem) {
-            return elem.trim();
-        }).filter(function(elem) {
-            return !!elem;
-        });
-    },
-    // snip
-}
-                        </code>
-    				</pre>
-				</section>
-				<section>
-                    <h3>model helpers</h3>
-                    <pre>
-                    	<code class="javascript">
-/**
- * Network model
- */
-var Network = function(document) {
-    _.extend(this, document);
-};
-
-/**
- * Leave network
- *
- * @return {Boolean}
- */
-Network.prototype.leave = function(upperId) {
-    Networks.update(this._id, {$pull: {uppers: upperId}});
-    Meteor.users.update(upperId, {$pull: {networks: this._id}});
-};
-
-/**
- @namespace Networks
- @name Networks
- */
-Networks = new Mongo.Collection('networks', {
-    transform: function(document) {
-        return new Network(document);
-    }
-});
-
-/**
- * Networks collection helpers
- */
-Networks.findByFilter = function(options) {
-    var options = {
-        // snip
-    };
-    var complicatedQuery = {
-        // snip
-    };
-    return this.find(complicatedQuery, options);
-};
-    					</code>
-    				</pre>
-				</section>
-				<section>
-                    <h2>Challenge 3</h2>
-                    <h3>Microservice integration</h3>
-                </section>
-				<section>
-                    <blockquote>"How do we decouple meteor app logic into separate microservices?"</blockquote>
-                </section>
-				<section>
-                    <h3>Event based meteor methods</h3>
-                    <img src="images/partup-architecture-diagram.png" />
-                </section>
-                <section>
-                	<h3>activities_methods.js</h3>
-                    <pre>
-                    	<code class="javascript">
-Meteor.methods({
-    /**
-     * Archive an Activity
-     *
-     * @param  {string} activityId
-     */
-    'activities.archive': function(activityId) {
-        var upper = Meteor.user();
-        var activity = Activities.findOneOrFail(activityId);
-
-        if (!upper || activity.creator_id !== upper._id) {
-            throw new Meteor.Error(401, 'Unauthorized.');
-        }
-
-        try {
-            Activities.update(activityId, {$set: {archived: true}});
-
-            Event.emit('partups.activities.archived', upper._id, activity);
-
-            return {
-                _id: activity._id
-            };
-        } catch (error) {
-            Log.error(error);
-            throw new Meteor.Error(500, 'Activity [' + activityId + '] could not be archived.');
-        }
-    }
-});
-
-    					</code>
-    				</pre>
-				</section>
-                <section>
-                	<h3>activities_handler.js</h3>
-                    <pre>
-                    	<code class="javascript">
-/**
- * Generate a Partup update when an activity is archived
- */
-Event.on('partups.activities.archived', function(userId, activity) {
-    if (!userId) return;
-    if (!activity.update_id) return;
-
-    var set = {
-        upper_id: userId,
-        type: 'partups_activities_archived',
-        updated_at: new Date()
-    };
-
-    Updates.update({_id: activity.update_id}, {$set: set});
-});
-    					</code>
-    				</pre>
-				</section>
-				<section>
-                    <h2>example</h2>
-                    <ol>
-                        <li>User joins a partup in meteor app</li>
-                        <div class="fragment">
-                        <li>Event is sent from Meteor app to bus</li>
-                        </div>
-                        <div class="fragment">
-                        <li>Recommendation service reacts on event</li>
-                        </div>
-                        <div class="fragment">
-                        <li>Recommendation service generates recommendations and sends event</li>
-                        </div>
-                        <div class="fragment">
-                        <li>Meteor reacts on recommendation event and pushes data to client</li>
-                        </div>
-                    </ol>
-				</section>
-				<section>
-                    <h2>Challenge 4</h2>
-                    <h3>Scaling Meteor</h3>
-                </section>
-				<section>
-                	<h2>Modulus.io</h2>
-                    <img src="images/modulus.png"/>
-				</section>
-				<section>
-                	<h2>Compose.io</h2>
-                    <img src="images/compose.png"/>
-				</section>
-				<section>
-                	<h2>Wercker</h2>
-                    <img src="images/wercker.png"/>
-				</section>
-				<section>
-                	<h2>Next steps</h2>
+                    <h2>Uses</h2>
                     <ul>
-                        <li>Testing (velocity)</li>
-                        <li>DDP debug tooling</li>
+                        <li>real-time web applications</li>
+                        <li>real-time mobile applications</li>
+                        <li>internet of things</li>
+                    </ul>
+                </section>
+				<section>
+                    <h2>Scaling</h2>
+                    <ul>
+                        <li>limited to max connections per box</li>
+                        <li>loadbalancing requires session affinity</li>
+                    </ul>
+                </section>
+				<section>
+                	<h2>Pushing the web forward</h2>
+                    <ul>
+                        <li>Agree upon a standard</li>
+                        <li>Create DDP debug tooling</li>
                     </ul>
 				</section>
 				<section class="pp-title">
-					<h3>Thank you for your attention</h3>
-				</section>
-				<section class="pp-title">
-					<h1>Part-up</h1>
-					<h3>a meteor production story</h3>
-                    <p>
-                    	<img src="images/peter2.png" alt="">
-                    </p>
-                    <img src="images/logo-white.png"/>
+					<h2>Thank you for your attention</h2>
+                    <br>
+                    <p><a href="https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications">https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications</a></p>
+                    <br>
 					<p>
                     	<a href="http://twitter.com/peterpeerdeman">@peterpeerdeman</a>
                     </p>
