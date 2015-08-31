@@ -47,7 +47,12 @@
                     	<a href="http://twitter.com/peterpeerdeman">@peterpeerdeman</a>
                     </p>
 				</section>
-				<section data-background="images/payoff-slide.png">
+				<section >
+                    <section data-background="images/payoff-slide.png">
+                    </section>
+                        <section>
+                            <video id="partup-screendemo" controls="controls" name="partup-screendemo" src="videos/partup-screendemo.mov#t=23"></video>
+                        </section>
                 </section>
 				<section>
                 	<ul>
@@ -60,9 +65,9 @@
                     	</div>
                     </ul>
 				</section>
+                    <!--
                 <section>
                     <h2>overview</h2>
-                    <!--
                 	<ul>
                         <li>definition</li>
                         <li>demo application</li>
@@ -81,7 +86,7 @@
 				</section>
 				<section>
                     <h3>Distributed Data Protocol</h3>
-                    <h4>(as per matt)</h4>
+                    <h4>(as per matt and peter)</h4>
 					<blockquote>"a chance to define interoperability in realtime websockets, as http did for request response"</blockquote>
 				</section>
 				<section>
@@ -89,13 +94,16 @@
                 	<ul>
 	                    	<li>Coined March 21, 2012 by Matt Debergalis</li>
                     	<div class="fragment">
-		                    <li>Pub Sub and Remote Procedure Calls</li>
+                            <li><a href="https://github.com/meteor/meteor/blob/master/packages/ddp/DDP.md">360 lines</a> of readable english</li>
                     	</div>
                     	<div class="fragment">
-		                    <li>No REST / Request-Response</li>
+		                    <li>Pub Sub and Remote Procedure Call models</li>
                     	</div>
                     	<div class="fragment">
-		                    <li>Data on the wire</li>
+		                    <li>No HTTP / REST / Request-Response</li>
+                    	</div>
+                    	<div class="fragment">
+		                    <li>JSON over bi-directional websockets</li>
                     	</div>
                     </ul>
 				</section>
@@ -134,9 +142,6 @@
 				<section>
                     <h2>DDP spec</h2>
                     <h3>Connection</h3>
-                    <!-- 
-                        - explain JSON over SockJS or Websockets 
-                    -->
                 	<pre>
                 		<code>
                        CLIENT          SERVER
@@ -189,7 +194,6 @@
                                     <= result
                                     <= changed
                                     <= updated
-                    => unsub
                         </code>
                     </pre>
                     <!-- 
@@ -222,7 +226,7 @@
 				<section>
                     <h2>But I can't use meteor</h2>
                     <div class="fragment">
-                    <h3>You don't have to!</h3>
+                    <h3>You don't have to</h3>
                     </div>
                 </section>
                 <section>
@@ -234,19 +238,21 @@
 				<section>
                     <h2>Using DDP</h2>
                     <ul>
-                        <li>full stack real-time web applications</li>
+                        <li>Full stack real-time web applications</li>
                         <div class='fragment'>
-                            <li>realtime functionality in any app</li>
+                            <li>Realtime functionality in any app</li>
                         </div>
                         <div class='fragment'>
-                            <li>internet of things</li>
+                            <li>Internet of Things</li>
                         </div>
                     </ul>
                 </section>
 				<section>
-                    <h2>Scaling</h2>
+                    <h2>But, will it scale?</h2>
                     <ul>
-                        <li>limited to max connections per box</li>
+                        <div class='fragment'>
+                            <li>limited to max connections per box</li>
+                        </div>
                         <div class='fragment'>
                             <li>loadbalancing requires session affinity</li>
                         </div>
