@@ -38,7 +38,7 @@
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section class="pp-title">
-					<h2>DDP: the real-time API for web applications</h2>
+                    <h3>DDP: the real-time API <br>for web applications</h3>
                     <p>
                     	<img src="images/peter2.png" alt="">
                     </p>
@@ -75,13 +75,13 @@
                 </section>
 				<section>
                     <h3>Distributed Data Protocol</h3>
-                    <h4>(as spec)</h4>
+                    <h4>(as per spec)</h4>
                     <blockquote>"a protocol between client and server that supports RPC, the client subscribing to documents and the server sending changes about those documents"</blockquote>
                     <!--<blockquote>"a <u>simple</u> and <u>standard</u> way for servers to <u>publish</u> documents to clients and keep the documents updated when <u>changes</u> are made"</blockquote>-->
 				</section>
 				<section>
                     <h3>Distributed Data Protocol</h3>
-                    <h4>(as matt)</h4>
+                    <h4>(as per matt)</h4>
 					<blockquote>"a chance to define interoperability in realtime websockets, as http did for request response"</blockquote>
 				</section>
 				<section>
@@ -215,37 +215,61 @@
                     </pre>
 				</section>
                 <section>
-                    <h2>Code Examples</h2>
+                    <h2>Code</h2>
                     <p><img width=300 src="images/endpointcon-map.png"/></p>
                     <p><a href="https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications/tree/master/examples/endpointcon-map">endpointcon-map meteor example on github</a></p>
                 </section>
+				<section>
+                    <h2>But I can't use meteor</h2>
+                    <div class="fragment">
+                    <h3>You don't have to!</h3>
+                    </div>
+                </section>
                 <section>
-                    <h2>Code Examples</h2>
+                    <h2>Code Example</h2>
                     <p><img width=500 src="images/endpointcon-server-and-client.png"/></p>
                     <p><a href="https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications/tree/master/examples/endpointcon-server">endpointcon-server node example on github</a></p>
                     <p><a href="https://github.com/peterpeerdeman/ddp-the-real-time-api-for-web-applications/tree/master/examples/endpointcon-client">endpointcon-client javascript example on github</a></p>
                 </section>
-                
 				<section>
-                    <h2>Uses</h2>
+                    <h2>Using DDP</h2>
                     <ul>
-                        <li>real-time web applications</li>
-                        <li>real-time mobile applications</li>
-                        <li>internet of things</li>
+                        <li>full stack real-time web applications</li>
+                        <div class='fragment'>
+                            <li>realtime functionality in any app</li>
+                        </div>
+                        <div class='fragment'>
+                            <li>internet of things</li>
+                        </div>
                     </ul>
                 </section>
 				<section>
                     <h2>Scaling</h2>
                     <ul>
                         <li>limited to max connections per box</li>
-                        <li>loadbalancing requires session affinity</li>
+                        <div class='fragment'>
+                            <li>loadbalancing requires session affinity</li>
+                        </div>
+                        <div class='fragment'>
+                            <li>autoscaling with hosted solutions like modulus</li>
+                        </div>
                     </ul>
                 </section>
 				<section>
-                	<h2>Pushing the web forward</h2>
+                	<h2>What I ask of you?</h2>
+                    <div class='fragment'>
+                        <h3>Push the web forward!</h3>
+                    </div>
+                </section>
+				<section>
                     <ul>
-                        <li>Agree upon a standard</li>
-                        <li>Create DDP debug tooling</li>
+                        <li>Give DDP a try</li>
+                        <div class='fragment'>
+                            <li>Use DDP instead of yet-another-ad-hoc-message-protocol</li>
+                        </div>
+                        <div class='fragment'>
+                            <li>Voice DDP as standard and push tooling forward</li>
+                        </div>
                     </ul>
 				</section>
 				<section class="pp-title">
