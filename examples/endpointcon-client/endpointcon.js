@@ -29,6 +29,9 @@ ddpclient.connect(function(error, wasReconnect) {
             document.getElementById('ping').textContent = newFields.value
         }
         if (id == 2) {
+            document.getElementById('cpu').textContent = newFields.value
+        }
+        if (id == 3) {
             document.getElementById('clicks').textContent = newFields.value
         }
     };
