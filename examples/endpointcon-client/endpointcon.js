@@ -28,5 +28,15 @@ ddpclient.connect(function(error, wasReconnect) {
         if (id == 1) {
             document.getElementById('ping').textContent = newFields.value
         }
+        if (id == 2) {
+            document.getElementById('clicks').textContent = newFields.value
+        }
     };
+
+    /*
+     * Send a remote procedure call
+     */
+    document.getElementById('addclick').addEventListener('click', function() {
+        ddpclient.call('click');
+    });
 });
