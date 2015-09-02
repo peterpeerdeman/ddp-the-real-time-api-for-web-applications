@@ -19,7 +19,6 @@ sensorvalues[3] = {title: 'Clicks', value: 0};
 setInterval(function() {
     sensorvalues[0].value = new Date();
     exec('ping -c 1 google.com', function(error, stdout, stderr) {
-        console.log(error, stdout, stderr);
         sensorvalues[1].value = stdout;
     });
     cpu(1000, function(load) {

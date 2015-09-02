@@ -4,6 +4,7 @@
   "description": "an example ddp server in vanilla javascript",
   "main": "endpointcon-server.js",
   "dependencies": {
+    "cpu-load": "^1.0.0",
     "ddp-server-reactive": "^0.2.0"
   },
   "devDependencies": {},
