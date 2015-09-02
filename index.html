@@ -50,9 +50,13 @@
 				<section >
                     <section data-background="images/payoff-slide.png">
                     </section>
-                        <section>
-                            <video id="partup-screendemo" controls="controls" name="partup-screendemo" src="videos/partup-screendemo.mov#t=23"></video>
-                        </section>
+                    <section data-background="images/notification.gif">
+                    </section>
+                    <section data-background="images/realtime-casper.gif">
+                    </section>
+                    <section>
+                        <video id="partup-screendemo" controls="controls" name="partup-screendemo" src="videos/partup-screendemo.mov#t=23"></video>
+                    </section>
                 </section>
 				<section>
                 	<ul>
@@ -78,6 +82,20 @@
                     </ul>
                     -->
                 </section>
+                <section>
+                    <h2>Why should I care?</h2>
+                        <ul>
+                            <div class="fragment">
+                                <li>Real-time functionality in webapps expected default</li>
+                            </div>
+                            <div class="fragment">
+                                <li>We are going to need to integrate real-time API's</li>
+                            </div>
+                            <div class="fragment">
+                                <li>We love to avoid re-inventing the wheel</li>
+                            </div>
+                     </ul>
+                </section>
 				<section>
                     <h3>Distributed Data Protocol</h3>
                     <h4>(as per spec)</h4>
@@ -87,12 +105,12 @@
 				<section>
                     <h3>Distributed Data Protocol</h3>
                     <h4>(as per matt and peter)</h4>
-					<blockquote>"a chance to define interoperability in realtime websockets, as http did for request response"</blockquote>
+					<blockquote>"a unique chance to define interoperability in realtime websockets, as http did for request response"</blockquote>
 				</section>
 				<section>
                 	<h2>Distributed Data Protocol</h2>
                 	<ul>
-	                    	<li>Coined March 21, 2012 by Matt Debergalis</li>
+                        <li>Coined March 21, 2012 by Matt DeBergalis</li>
                     	<div class="fragment">
                             <li><a href="https://github.com/meteor/meteor/blob/master/packages/ddp/DDP.md">360 lines</a> of readable english</li>
                     	</div>
@@ -177,6 +195,7 @@
                                     <= changed
                                     <= removed
                     => unsub
+                                    <= nosub
                         </code>
                     </pre>
                     <!-- 
