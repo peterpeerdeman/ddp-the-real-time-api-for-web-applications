@@ -6,5 +6,5 @@ A sample ddp client in vanilla javascript using browserify
 
 - `npm browserify -g`
 - `npm install`
-- `browserify endpointcon.js -o build/endpointcon.js
+- `browserify endpointcon.js -o build/endpointcon.js`
 - open index.html in a browser
